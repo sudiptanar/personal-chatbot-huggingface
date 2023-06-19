@@ -17,8 +17,15 @@ if __name__ == "__main__":
     past_user_inputs = []
     generated_responses = []
 
+    print("\n")
+    print("     *****************************************************************")
+    print("     **   Hi! I'm your personal chatbot. Lets start conversation.   **")
+    print("     **  Enter exit words (Example- close, bye, exit etc) to exit.  **")
+    print("     *****************************************************************")
+    print("\n")
+
     while True:
-        input_response = input("Your Response : ").lower()
+        input_response = input(" • Your  Response   : ").lower()
         if input_response in exit_words or input_response=='':
             break
 
@@ -30,10 +37,10 @@ if __name__ == "__main__":
             },
         })
         # Output
-        print("Chatbot Response : " + output.get('generated_text'))
+        print(" • Chatbot Response :" + output.get('generated_text'))
 
         # Store data
         past_user_inputs.append(input_response)
         generated_responses.append(output.get('generated_text'))
 
-    print("Chatbot Response : Ok. Good Bye. Take care :)")
+    print(" • Chatbot Response : Ok. Good Bye. Take care :)")
